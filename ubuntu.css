@@ -13,8 +13,9 @@
 
 body {
   background-color: white;
-  background-image: url(bg.jpeg);
+  background-image: url(img/bg.jpeg);
   margin: 0;
+  padding: 0;
 }
 
 a {
@@ -24,7 +25,10 @@ a {
 /* Top NavBar
  */
 .nav {
+  width: 100%;
   height: 30px;
+  position: fixed;
+  top: 0px;
   background-color: #333333;
   background: #666666;
   /* Old browsers */
@@ -51,8 +55,13 @@ a {
   float: left;
 }
 
+/* Bottom NavBar
+ */
 .footer {
+  width: 100%;
   height: 30px;
+  position: fixed;
+  bottom: 0px;
   background-color: #333333;
   background: #666666;
   /* Old browsers */
@@ -70,6 +79,7 @@ a {
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#333333',GradientType=0 );
   /* IE6-9 */
+  margin-top: auto;
 }
 .footer .footer_item {
   line-height: 30px;
@@ -82,7 +92,7 @@ a {
 /* Terminal Wrapper
  */
 .wrapper {
-  width: 800;
+  width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -91,21 +101,27 @@ a {
  */
 .terminal {
   height: 550px;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  -moz-border-radius-topleft: 5px;
-  -moz-border-radius-topright: 5px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.65);
-  -moz-box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.65);
-  -webkit-box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.65);
+  box-shadow: 3px 9px 6px rgba(0, 0, 0, 0.65);
+  -moz-box-shadow: 3px 9px 6px rgba(0, 0, 0, 0.65);
+  -webkit-box-shadow: 3px 9px 6px rgba(0, 0, 0, 0.65);
 }
 .terminal .title_bar, .terminal .menu_bar {
   vertical-align: middle;
 }
 .terminal .title_bar {
   background-color: #333333;
+  /*	
+  	-webkit-border-top-left-radius: 5px;
+  	-webkit-border-top-right-radius: 5px;
+  	-moz-border-radius-topleft: 5px;
+  	-moz-border-radius-topright: 5px;
+  	border-top-left-radius: 5px;
+  	border-top-right-radius: 5px;
+  */
+  border-radius: 5px 5px 0px 0px;
+  -moz-border-radius: 5px 5px 0px 0px;
+  -khtml-border-radius: 5px 5px 0px 0px;
+  -webkit-border-radius: 5px 5px 0px 0px;
   background: #666666;
   /* Old browsers */
   background: -moz-linear-gradient(top, #666666 0%, #333333 50%);
@@ -129,10 +145,10 @@ a {
   border-bottom-style: solid;
   border-bottom-color: black;
 }
-.terminal .title_bar .title_bar_item {
+.terminal .title_bar .title_bar_item, .terminal .title_bar .title_bar_buttons {
   float: left;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 .terminal .menu_bar {
   background-color: #333333;
@@ -158,6 +174,7 @@ a {
   border-left-width: 1px;
   border-left-style: inset;
   border-left-color: white;
+  white-space: normal;
 }
 .terminal .content .cursor {
   text-decoration: blink;
@@ -184,8 +201,6 @@ a {
   color: lime;
 }
 
-/* Bottom NavBar
- */
 /* Blanks (fill-ins)
  */
 .top_blank {

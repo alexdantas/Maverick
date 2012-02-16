@@ -59,18 +59,24 @@ $bottom_blank_height:  100px;
 
 @mixin upper_border_round {
 	// oh yeah CSS3
+/*	
 	-webkit-border-top-left-radius: 5px;
 	-webkit-border-top-right-radius: 5px;
 	-moz-border-radius-topleft: 5px;
 	-moz-border-radius-topright: 5px;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
+*/
+	border-radius:5px 5px 0px 0px;
+	-moz-border-radius: 5px 5px 0px 0px;
+	-khtml-border-radius: 5px 5px 0px 0px; 
+	-webkit-border-radius: 5px 5px 0px 0px;
 }
 
 @mixin bottom_right_shadow {
-    box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.65);
-    -moz-box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.65);
-    -webkit-box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.65);
+    box-shadow: 3px 9px 6px rgba(0, 0, 0, 0.65);
+    -moz-box-shadow: 3px 9px 6px rgba(0, 0, 0, 0.65);
+    -webkit-box-shadow: 3px 9px 6px rgba(0, 0, 0, 0.65);
 }
 
 /* General Stuff
@@ -81,8 +87,9 @@ $bottom_blank_height:  100px;
 
 body {
 	background-color: $bg_color;
-	background-image: url(bg.jpeg);
+	background-image: url(img/bg.jpeg);
 	margin: 0;
+	padding: 0;
 }
 
 a {
@@ -92,10 +99,13 @@ a {
 /* Top NavBar
  */
 .nav {
+	width: 100%;
 	height: $nav_height;
+
+	position: fixed;
+	top: 0px;
 	background-color: $terminal_title_dark;
 	@include nav_gradient;
-	
 	.nav_item {
 		line-height: $nav_height;
 		vertical-align: middle;
@@ -105,11 +115,21 @@ a {
 	}
 }
 
+
+/* Bottom NavBar
+ */
+
 .footer {
+	width: 100%;
 	height: $footer_height;
+
+	position: fixed;
+	bottom: 0px;
+
 	background-color: $terminal_title_dark;
 	@include nav_gradient;
-	
+	margin-top: auto;
+		
 	.footer_item {
 		line-height: $footer_height;
 		vertical-align: middle;
@@ -123,7 +143,7 @@ a {
 /* Terminal Wrapper
  */
 .wrapper {
-	width: 800;
+	width: 800px;
 	margin-left: auto;
 	margin-right: auto;
 
@@ -135,7 +155,6 @@ a {
 .terminal {
 
 	height: $terminal_height;
-	@include upper_border_round;
 	@include bottom_right_shadow;
 	
 	.title_bar, .menu_bar {
@@ -143,17 +162,20 @@ a {
 	}
 	.title_bar {
 		background-color: $terminal_title_dark;
+		@include upper_border_round;
 		@include title_gradient;
+	
 		height: $title_bar_height;
 		font-weight: bold;
 		line-height: $title_bar_height;
 		border-bottom-width: 1px;
 		border-bottom-style: solid;
 		border-bottom-color: black;
-		.title_bar_item {
+		
+		.title_bar_item, .title_bar_buttons {
 			float: left;
-			margin-left: 10px;
-			margin-right: 10px;
+			margin-left: 5px;
+			margin-right: 5px;
 			// nothing, i guess...
 		}
 	}
@@ -184,6 +206,8 @@ a {
 		border-left-style:   inset;
 		border-left-color:   $terminal_border;  
 		
+		white-space: normal;
+		
 		.cursor {
 			text-decoration: blink;
 		}
@@ -201,12 +225,6 @@ a {
 		h5 { color: lime; }
 	}
 }
-
-
-/* Bottom NavBar
- */
-
-// Later i'll implement bottom bar specific stuff
 
 
 /* Blanks (fill-ins)
