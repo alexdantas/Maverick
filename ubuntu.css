@@ -1,0 +1,197 @@
+@font-face {
+  font-family: Ubuntu-R;
+  src: url(font/Ubuntu-R.ttf) format("truetype");
+}
+
+/* General Stuff
+ */
+* {
+  font-family: Ubuntu-R, Lucida Console, Courier, monospace;
+  font-size: 12pt;
+  color: white;
+}
+
+body {
+  background-color: white;
+  background-image: url(bg.jpeg);
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Top NavBar
+ */
+.nav {
+  height: 30px;
+  background-color: #333333;
+  background: #666666;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #666666 0%, #333333 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #666666), color-stop(100%, #333333));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #666666 0%, #333333 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #666666 0%, #333333 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #666666 0%, #333333 100%);
+  /* IE10+ */
+  background: linear-gradient(top, #666666 0%, #333333 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#333333',GradientType=0 );
+  /* IE6-9 */
+}
+.nav .nav_item {
+  line-height: 30px;
+  vertical-align: middle;
+  margin-left: 5px;
+  margin-right: 5px;
+  float: left;
+}
+
+.footer {
+  height: 30px;
+  background-color: #333333;
+  background: #666666;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #666666 0%, #333333 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #666666), color-stop(100%, #333333));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #666666 0%, #333333 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #666666 0%, #333333 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #666666 0%, #333333 100%);
+  /* IE10+ */
+  background: linear-gradient(top, #666666 0%, #333333 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#333333',GradientType=0 );
+  /* IE6-9 */
+}
+.footer .footer_item {
+  line-height: 30px;
+  vertical-align: middle;
+  margin-left: 5px;
+  margin-right: 5px;
+  float: left;
+}
+
+/* Terminal Wrapper
+ */
+.wrapper {
+  width: 800;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Terminal
+ */
+.terminal {
+  height: 550px;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.65);
+  -moz-box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.65);
+  -webkit-box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.65);
+}
+.terminal .title_bar, .terminal .menu_bar {
+  vertical-align: middle;
+}
+.terminal .title_bar {
+  background-color: #333333;
+  background: #666666;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #666666 0%, #333333 50%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #666666), color-stop(50%, #333333));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #666666 0%, #333333 50%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #666666 0%, #333333 50%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #666666 0%, #333333 50%);
+  /* IE10+ */
+  background: linear-gradient(top, #666666 0%, #333333 50%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#666666', endColorstr='#333333',GradientType=0 );
+  /* IE6-9 */
+  height: 30px;
+  font-weight: bold;
+  line-height: 30px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: black;
+}
+.terminal .title_bar .title_bar_item {
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.terminal .menu_bar {
+  background-color: #333333;
+  height: 25px;
+  line-height: 25px;
+}
+.terminal .menu_bar .menu_bar_item {
+  font-size: 10pt;
+  margin-right: 10px;
+  margin-left: 10px;
+  float: left;
+}
+.terminal .content {
+  background-color: #330033;
+  height: 495px;
+  padding: 2px;
+  border-bottom-width: 1px;
+  border-bottom-style: inset;
+  border-bottom-color: white;
+  border-right-width: 1px;
+  border-right-style: inset;
+  border-right-color: white;
+  border-left-width: 1px;
+  border-left-style: inset;
+  border-left-color: white;
+}
+.terminal .content .cursor {
+  text-decoration: blink;
+}
+.terminal .content a a:hover {
+  text-decoration: underline;
+}
+.terminal .content h1, .terminal .content h2, .terminal .content h3, .terminal .content h4, .terminal .content h5 {
+  font-size: 100%;
+}
+.terminal .content h1 {
+  color: blue;
+}
+.terminal .content h2 {
+  color: red;
+}
+.terminal .content h3 {
+  color: green;
+}
+.terminal .content h4 {
+  color: maroon;
+}
+.terminal .content h5 {
+  color: lime;
+}
+
+/* Bottom NavBar
+ */
+/* Blanks (fill-ins)
+ */
+.top_blank {
+  height: 100px;
+}
+
+.bottom_blank {
+  height: 100px;
+}

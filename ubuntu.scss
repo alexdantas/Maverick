@@ -1,0 +1,223 @@
+
+
+//
+// Global Variables
+//
+// Damn Web-Safe colors!
+$terminal_bg_light:    #330033;
+$terminal_bg_dark:     #330033;
+$terminal_title_light: #666666;
+$terminal_title_dark:  #333333;
+$terminal_text:        white;
+$terminal_border:      white;
+$bg_color:             white;
+
+// Now the sizes
+$terminal_height:      550px;
+$title_bar_height:      30px;
+$menu_bar_height:       25px;
+$nav_height:            30px;
+$footer_height:         30px;
+$top_blank_height:     100px;
+$bottom_blank_height:  100px;
+
+
+@font-face {
+	font-family: Ubuntu-R;
+	src: url(font/Ubuntu-R.ttf) format("truetype");
+}
+
+@mixin ubuntu_font {
+	// css3 font include
+	// all fonts from site
+	font-family: Ubuntu-R, Lucida Console, Courier, monospace;
+	font-size: 12pt;
+	color: $terminal_text;
+}
+
+@mixin title_gradient {
+	background: #666666; /* Old browsers */
+	background: -moz-linear-gradient(top,  #666666 0%, #333333 50%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#666666), color-stop(50%,#333333)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #666666 0%,#333333 50%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #666666 0%,#333333 50%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #666666 0%,#333333 50%); /* IE10+ */
+	background: linear-gradient(top,  #666666 0%,#333333 50%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#333333',GradientType=0 ); /* IE6-9 */	
+}
+
+@mixin nav_gradient {
+	background: #666666; /* Old browsers */
+	background: -moz-linear-gradient(top,  #666666 0%, #333333 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#666666), color-stop(100%,#333333)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #666666 0%,#333333 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #666666 0%,#333333 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #666666 0%,#333333 100%); /* IE10+ */
+	background: linear-gradient(top,  #666666 0%,#333333 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#333333',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin upper_border_round {
+	// oh yeah CSS3
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+@mixin bottom_right_shadow {
+    box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.65);
+    -moz-box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.65);
+    -webkit-box-shadow: 4px 3px 6px rgba(0, 0, 0, 0.65);
+}
+
+/* General Stuff
+ */
+* {
+	@include ubuntu_font;
+}
+
+body {
+	background-color: $bg_color;
+	background-image: url(bg.jpeg);
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* Top NavBar
+ */
+.nav {
+	height: $nav_height;
+	background-color: $terminal_title_dark;
+	@include nav_gradient;
+	
+	.nav_item {
+		line-height: $nav_height;
+		vertical-align: middle;
+		margin-left: 5px;
+		margin-right: 5px;		
+		float: left;
+	}
+}
+
+.footer {
+	height: $footer_height;
+	background-color: $terminal_title_dark;
+	@include nav_gradient;
+	
+	.footer_item {
+		line-height: $footer_height;
+		vertical-align: middle;
+		margin-left: 5px;
+		margin-right: 5px;		
+		float: left;
+	}
+}
+
+
+/* Terminal Wrapper
+ */
+.wrapper {
+	width: 800;
+	margin-left: auto;
+	margin-right: auto;
+
+} 
+ 
+/* Terminal
+ */
+
+.terminal {
+
+	height: $terminal_height;
+	@include upper_border_round;
+	@include bottom_right_shadow;
+	
+	.title_bar, .menu_bar {
+		vertical-align: middle;
+	}
+	.title_bar {
+		background-color: $terminal_title_dark;
+		@include title_gradient;
+		height: $title_bar_height;
+		font-weight: bold;
+		line-height: $title_bar_height;
+		border-bottom-width: 1px;
+		border-bottom-style: solid;
+		border-bottom-color: black;
+		.title_bar_item {
+			float: left;
+			margin-left: 10px;
+			margin-right: 10px;
+			// nothing, i guess...
+		}
+	}
+	.menu_bar {
+		background-color: $terminal_title_dark;
+		height: $menu_bar_height;
+		line-height: $menu_bar_height;
+				
+		.menu_bar_item {
+			font-size: 10pt;
+			margin-right: 10px;
+			margin-left: 10px;
+			float: left;
+		}
+	}
+	.content {
+		background-color: $terminal_bg_light;
+		height: $terminal_height - $title_bar_height - $menu_bar_height;
+		padding: 2px;
+		
+		border-bottom-width: 1px;
+		border-bottom-style: inset;
+		border-bottom-color: $terminal_border;
+		border-right-width:  1px;
+		border-right-style:  inset;
+		border-right-color:  $terminal_border;
+		border-left-width:   1px;
+		border-left-style:   inset;
+		border-left-color:   $terminal_border;  
+		
+		.cursor {
+			text-decoration: blink;
+		}
+		a {
+			a:hover { text-decoration: underline; }
+		}
+		
+		h1, h2, h3, h4, h5 {
+			font-size: 100%;
+		}
+		h1 { color: blue; }
+		h2 { color: red; }
+		h3 { color: green; }
+		h4 { color: maroon; }
+		h5 { color: lime; }
+	}
+}
+
+
+/* Bottom NavBar
+ */
+
+// Later i'll implement bottom bar specific stuff
+
+
+/* Blanks (fill-ins)
+ */
+
+.top_blank {
+	height: $top_blank_height;
+}
+.bottom_blank {
+	height: $bottom_blank_height;
+}
+
+
+
